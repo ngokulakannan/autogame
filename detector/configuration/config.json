@@ -1,0 +1,25 @@
+{
+
+    "source_path": "/media/gokul/my_data/Projects/python/autogame/dataset/data_files/new/palm",
+    "output_path": "/media/gokul/my_data/Projects/python/autogame/output/",
+    "labels_file_path": "/media/gokul/my_data/Projects/python/autogame/dataset/data_files/HandInfo.csv",
+    "image_distractions": "/media/gokul/my_data/Projects/python/autogame/dataset/data_files/new/negetive/",
+
+    "num_distractions_per_image": 2,
+
+    "pyramid_scale":1.5,
+    "window_dim":[180,270],
+    "window_step": 50,
+    "overlap_thresh": 0.3,
+    "min_probability": 0.7,
+    
+
+    "orientations": 9,
+	"pixels_per_cell": [8, 8],
+	"cells_per_block": [4, 4],
+    "normalize": true,
+    
+    "C":0.2
+    
+    
+}
