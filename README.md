@@ -14,6 +14,10 @@ Run detector/train.py to train the model. Run control_game.py to start the appli
                     <li> right arrow button -move right </li>
                     </ul>
                    
+<b>Note:</b> <ol>
+        <li>if you want to train your own dataset, use annotaion XML files in PASCAL VOC format, so that dataset/annotations.py can extract informations from it.</li>
+        <li>if you want to get samples images from use dataset/get_images_from_video.py to get frames from video </li>
+
 
 # Demo video 
 

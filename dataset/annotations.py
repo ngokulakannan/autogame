@@ -3,9 +3,22 @@ from dataset.dataset_ops import dataset_ops
 
 
 def get_annotations(path='dataset/data_files/annotations/'):
+    '''
+    Parse the annotation xml files in PASCAL VOC format and return list of bounding boxes
+
+    Get the annotations folder and read all files from the folder.
+    Parse each file and retreve the xmin,ymin , xmax, ymax values and append it to a dictionary.
+    return that dictionary
+
+    Parameters
+    -----------
+    path: str
+        path of the annotations directory
+
+    '''
+
     files = dataset_ops.get_file_list(path,include_path=True)
     
-
     annotation_list ={}
     for file in files:
         doc = dom.parse(file)
@@ -20,6 +33,12 @@ def get_annotations(path='dataset/data_files/annotations/'):
     return annotation_list
 
 def find_average_dimensions():
+    '''
+    Find the average dimensions of dataset
+
+    Get the co-ordinate information of the dataset using get_annotations function.
+    Calculate height and width of each box and finally calulate and return the averge dimensions.
+    '''
 
     annotation_list = get_annotations()
     width,height = 0,0
@@ -32,9 +51,10 @@ def find_average_dimensions():
     return (width,height)
  
 ''' DRIVER CODE TO CHECK THE SCRIPT '''
-# a_list = get_annotations()
-# for key,value in a_list.items():
-#     print(key, value)
-#     break;
-print( find_average_dimensions() )
+if __name__ == '__main__':
+    a_list = get_annotations()
+    for key,value in a_list.items():
+        print(key, value)
+        break;
+    print( find_average_dimensions() )
 

@@ -52,7 +52,7 @@ class detector:
             
             
 
-
+''' DRIVER CODE TO CHECK THE SCRIPT '''
 if __name__ == '__main__':
 
     boxes = [
