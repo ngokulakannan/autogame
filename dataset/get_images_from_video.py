@@ -34,4 +34,4 @@ def get_images(video,output_path='data_files/palm'):
 
 ''' DRIVER CODE TO CHECK THE SCRIPT '''
 if __name__ == '__main__':
-    get_images('/home/gokul/snap/guvcview/81/my_video-4.mkv')
+    get_images('/xxx/xxx/xxx/xxx/xxx/my_video-4.mkv')

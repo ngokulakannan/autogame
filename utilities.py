@@ -1,6 +1,16 @@
 import cv2;
 
 def rotate(image,degree):
+    '''
+    Rotate the image to given degree
+
+    Parameters
+    ----------
+    image : numpy array
+        image to be rotated
+    degree : int
+        degree to be rotated
+    '''
     (h, w) = image.shape[:2]
     (cX, cY) = (w / 2, h / 2)
     
