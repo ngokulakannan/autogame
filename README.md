@@ -16,8 +16,15 @@ Run detector/train.py to train the model. Run control_game.py to start the appli
                    
 <b>Note:</b> <ol>
         <li>if you want to train your own dataset, use annotaion XML files in PASCAL VOC format, so that dataset/annotations.py can extract informations from it.</li>
-        <li>if you want to get samples images from use dataset/get_images_from_video.py to get frames from video </li>
-
+        <li>if you want to get samples images from use dataset/get_images_from_video.py to get frames from video </li></ol>
+<br>
+Lessons learnt,
+<ol>
+	<li> For SVM we dont need huge data like deep learning. As the data increases, model size will increase.</li>
+	<li> Some times we can go for fixed windows instead of sliding windows, if usecase permits.</li>
+	<li> Multiprocessing beacomes saviour at times (as multithreading is not our piece of cake- GIL)</li>
+	<li> Change my old laptop!</li>
+</ol>
 
 # Demo video 
 

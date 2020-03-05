@@ -56,6 +56,26 @@ def stop():
     time.sleep(timer)
     pyautogui.keyUp("down");
 
+def reverse_and_left():
+    '''
+    press the up and left button of the keybord till the given time
+    '''
+    pyautogui.keyDown("down");
+    pyautogui.keyDown("left");
+    time.sleep(timer)
+    pyautogui.keyUp("down");
+    pyautogui.keyUp("left");
+
+def reverse_and_right():
+    '''
+    press the up and right button of the keybord till the given time
+    '''
+    pyautogui.keyDown("down");
+    pyautogui.keyDown("right");
+    time.sleep(timer)
+    pyautogui.keyUp("down");
+    pyautogui.keyUp("right");
+
 def move_vehicle(control_queue):
     '''
     Call the appropriate method using given data from another process
@@ -72,10 +92,17 @@ def move_vehicle(control_queue):
     while True:
         control = control_queue.get()
         if(len(control) > 1):
-            if control[1] == "Left":
-                accelerate_and_left()
-            elif control[1] == "Right":
-                accelerate_and_right()
+            if control[0] == "Accelerate":
+                if control[1] == "Left":
+                    accelerate_and_left()
+                elif control[1] == "Right":
+                    accelerate_and_right()
+            else:
+                if control[1] == "Left":
+                    reverse_and_left()
+                elif control[1] == "Right":
+                    reverse_and_right()
+
         elif(len(control) > 0) :
             if control[0] == "Accelerate":
                 accelerate()
